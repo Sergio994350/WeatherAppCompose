@@ -9,6 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.sergio994350.weatherappcompose.domain.util.Constants.Companion.TODAY
 import com.sergio994350.weatherappcompose.domain.weather.WeatherData
 
 @Composable
@@ -23,7 +24,7 @@ fun WeatherForecast(
                 .padding(horizontal = 16.dp)
         ) {
             Text(
-                text = "Today",
+                text = TODAY,
                 fontSize = 20.sp,
                 color = Color.White
             )

@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.sergio994350.weatherappcompose.domain.location.LocationTracker
 import com.sergio994350.weatherappcompose.domain.repository.WeatherRepository
+import com.sergio994350.weatherappcompose.domain.util.Constants.Companion.LOCATION_ERROR
 import com.sergio994350.weatherappcompose.domain.util.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -47,7 +48,7 @@ class WeatherViewModel @Inject constructor(
             } ?: kotlin.run {
                 state = state.copy(
                     isLoading = false,
-                    error = "Cannot get location, check GPS"
+                    error = LOCATION_ERROR
                 )
             }
         }

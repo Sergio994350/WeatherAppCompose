@@ -17,6 +17,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.sergio994350.weatherappcompose.R
+import com.sergio994350.weatherappcompose.domain.util.Constants.Companion.TODAY
 import java.time.format.DateTimeFormatter
 import kotlin.math.roundToInt
 
@@ -41,7 +42,7 @@ fun WeatherCard(
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(
-                    text = "Today ${
+                    text = "$TODAY ${
                         data.time.format(
                             DateTimeFormatter.ofPattern("HH:mm")
                         )
@@ -74,7 +75,7 @@ fun WeatherCard(
                 ) {
                     WeatherDataDisplay(
                         value = data.pressure.roundToInt(),
-                        unit = "hpa",
+                        unit = "кПа",
                         icon = ImageVector.vectorResource(id = R.drawable.ic_pressure),
                         iconTint = Color.White,
                         textStyle = TextStyle(color = Color.White)
@@ -88,7 +89,7 @@ fun WeatherCard(
                     )
                     WeatherDataDisplay(
                         value = data.windSpeed.roundToInt(),
-                        unit = "km/h",
+                        unit = "км/ч",
                         icon = ImageVector.vectorResource(id = R.drawable.ic_wind),
                         iconTint = Color.White,
                         textStyle = TextStyle(color = Color.White)
@@ -96,7 +97,5 @@ fun WeatherCard(
                 }
             }
         }
-
     }
-
 }
